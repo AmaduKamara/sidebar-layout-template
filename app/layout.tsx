@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={`${inter.className} flex gap-2 w-full h-screen`}>
         <Sidebar />
-        {children}
+        <div className="py-4 bg-white w-full">{children}</div>
       </body>
     </html>
   );
