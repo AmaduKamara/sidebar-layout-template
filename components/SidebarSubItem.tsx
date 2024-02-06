@@ -1,5 +1,5 @@
 import React from "react";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, ChevronDown } from "lucide-react";
 
 interface SidebarItems {
   name: string;
@@ -14,13 +14,14 @@ interface SubItem {
 }
 
 const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
-  const { name, icon: Icon } = item;
+  const { name, icon: Icon, items } = item;
   return (
-    <li className='flex items-center space-x-2 space-y-1 px-4 py-2 hover:text-cyan-500 hover:bg-gray-200 cursor-pointer rounded-lg'>
-      <span>
+    <li className='flex items-center justify-between space-y-1 px-4 py-3 hover:text-cyan-500 hover:bg-slate-200 cursor-pointer rounded-lg'>
+      <div className='flex space-x-2 items-center'>
         <Icon size={18} />
-      </span>
-      <span>{name}</span>
+        <span>{name}</span>
+      </div>
+      {items && items.length > 0 && <ChevronDown size={18} />}
     </li>
   );
 };
