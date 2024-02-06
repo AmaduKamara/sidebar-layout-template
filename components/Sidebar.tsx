@@ -101,7 +101,7 @@ const Sidebar = () => {
     <main className='bg-gray-100 h-screen w-[20rem] max-w-[20rem] px-6 py-4 z-[999] overflow-auto md:relative fixed'>
       <div className='flex flex-col space-y-5 w-full'>
         <h1 className='text-cyan-600 font-bold uppercase text-2xl'>
-          Uni Portal
+          App Logo
         </h1>
         <hr />
         <ul>
