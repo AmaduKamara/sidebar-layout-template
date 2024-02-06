@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import {
   LayoutDashboard,
   LucideIcon,
@@ -27,7 +27,7 @@ interface SubItem {
 const items: SidebarItems[] = [
   {
     name: "Dashboard",
-    path: "/",
+    path: "/dashboard",
     icon: LayoutDashboard,
   },
   {
