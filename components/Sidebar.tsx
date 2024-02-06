@@ -72,7 +72,7 @@ const items: SidebarItems[] = [
   },
   {
     name: "Help",
-    path: "/faqs",
+    path: "/help",
     icon: HelpCircle,
     items: [
       {
@@ -90,15 +90,15 @@ const items: SidebarItems[] = [
 const Sidebar = () => {
   return (
     <main className='bg-gray-100 h-screen w-[20rem] max-w-[20rem] px-6 py-4 z-[999] overflow-auto md:relative fixed'>
-      <div className="flex flex-col space-y-5 w-full">
+      <div className='flex flex-col space-y-5 w-full'>
         <h1 className='text-cyan-600 font-bold uppercase text-2xl'>
           Uni Portal
         </h1>
         <hr />
         <ul>
-            {items.map(item => (
-              <SidebarSubItemPage key={item.path} item={item}/>
-            ))}
+          {items.map((item) => (
+            <SidebarSubItemPage key={item.path} item={item} />
+          ))}
         </ul>
       </div>
     </main>
