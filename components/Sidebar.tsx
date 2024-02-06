@@ -51,6 +51,10 @@ const items: SidebarItems[] = [
     icon: Settings,
     items: [
       {
+        name: "General",
+        path: "/general",
+      },
+      {
         name: "Notifications",
         path: "/notifications",
       },
