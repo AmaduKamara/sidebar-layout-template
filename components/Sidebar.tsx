@@ -52,11 +52,15 @@ const items: SidebarItems[] = [
     items: [
       {
         name: "General",
-        path: "/general",
+        path: "/settings",
+      },
+      {
+        name: "Security",
+        path: "/settings/security",
       },
       {
         name: "Notifications",
-        path: "/notifications",
+        path: "/settings/notifications",
       },
     ],
   },
@@ -76,12 +80,16 @@ const items: SidebarItems[] = [
     icon: HelpCircle,
     items: [
       {
-        name: "Contact",
-        path: "/contact-us",
+        name: "FAQs",
+        path: "/help",
       },
       {
         name: "Supports",
-        path: "/supports",
+        path: "/help/supports",
+      },
+      {
+        name: "Contact",
+        path: "/help/contact-us",
       },
     ],
   },

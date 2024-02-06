@@ -31,9 +31,7 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
     }
 
     router.push(path);
-  };
-
-  const toggleSubNav = () => setExpanded((prev) => !prev);
+  }
 
   return (
     <>
@@ -49,7 +47,6 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
         </div>
         {items && items.length > 0 && (
           <ChevronDown
-            onClick={toggleSubNav}
             size={18}
             className={expanded ? "rotate-100 duration-200" : ""}
           />

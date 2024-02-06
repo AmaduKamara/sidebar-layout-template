@@ -2,7 +2,7 @@ import React from 'react'
 
 const NotificationsPage = () => {
   return (
-    <div>NotificationsPage</div>
+    <div>Settings / NotificationsPage</div>
   )
 }
 
