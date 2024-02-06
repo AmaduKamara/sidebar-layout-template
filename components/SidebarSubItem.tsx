@@ -23,9 +23,14 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
   const pathname = usePathname();
   const router = useRouter();
 
-   const isActive = useMemo(() => {
-     return path === pathname;
-   }, [path, pathname]);
+  const isActive = useMemo(() => {
+    if (items && items.length > 0) {
+      if (items.find((item) => item.path === pathname)) {
+        setExpanded(true);
+        return true;
+      }
+    }
+  }, [pathname, items]);
 
   const handleNavLinkClick = () => {
     if (items && items.length > 0) {
@@ -38,7 +43,7 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
   return (
     <>
       <li
-        className={`flex items-center justify-between space-y-1 px-4 py-3 hover:text-cyan-500 hover:bg-slate-200 cursor-pointer rounded-lg ${
+        className={`flex items-center justify-between space-y-1 px-4 py-3 hover:text-cyan-500 hover:bg-slate-200 cursor-pointer rounded-lg transition duration-300 ${
           isActive && "text-cyan-500 bg-slate-200"
         }`}
         onClick={handleNavLinkClick}
@@ -50,12 +55,12 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
         {items && items.length > 0 && (
           <ChevronDown
             size={18}
-            className={expanded ? "rotate-100 duration-200" : ""}
+            className={expanded ? "rotate-100 transition duration-200" : ""}
           />
         )}
       </li>
       {expanded && items && items.length > 0 && (
-        <div className='flex flex-col space-y-2 ml-10 mt-1'>
+        <div className='flex flex-col space-y-2 ml-10 mt-2'>
           {items.map((item) => (
             <SubMenuItemPage key={item.path} item={item} />
           ))}
