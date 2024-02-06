@@ -54,10 +54,6 @@ const items: SidebarItems[] = [
         name: "Notifications",
         path: "/notifications",
       },
-      {
-        name: "Support",
-        path: "/support",
-      },
     ],
   },
   {
@@ -80,8 +76,8 @@ const items: SidebarItems[] = [
         path: "/contact-us",
       },
       {
-        name: "Support",
-        path: "/support",
+        name: "Supports",
+        path: "/supports",
       },
     ],
   },
