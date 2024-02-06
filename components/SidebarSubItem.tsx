@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { LucideIcon, ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import SubMenuItemPage from "./SubMenuItem";
@@ -23,7 +23,9 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const isActive = pathname.startsWith(item.path);
+   const isActive = useMemo(() => {
+     return path === pathname;
+   }, [path, pathname]);
 
   const handleNavLinkClick = () => {
     if (items && items.length > 0) {
@@ -31,7 +33,7 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
     }
 
     router.push(path);
-  }
+  };
 
   return (
     <>
@@ -53,7 +55,7 @@ const SidebarSubItemPage = ({ item }: { item: SidebarItems }) => {
         )}
       </li>
       {expanded && items && items.length > 0 && (
-        <div className="flex flex-col space-y-2 ml-10 mt-1">
+        <div className='flex flex-col space-y-2 ml-10 mt-1'>
           {items.map((item) => (
             <SubMenuItemPage key={item.path} item={item} />
           ))}

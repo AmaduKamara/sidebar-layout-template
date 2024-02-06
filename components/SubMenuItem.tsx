@@ -1,5 +1,6 @@
 "use client";
-import { useRouter } from "next/navigation";
+import {useMemo} from 'react'
+import { useRouter, usePathname } from "next/navigation";
 
 interface SubItem {
   name: string;
@@ -9,7 +10,12 @@ interface SubItem {
 const SubMenuItemPage = ({ item }: { item: SubItem }) => {
   const { name, path } = item;
 
+  const pathname = usePathname();
   const router = useRouter();
+
+  const isActive = useMemo(() => {
+    return path === pathname
+  }, [path, pathname])
 
   const handleNavLinkClick = () => {
     router.push(path);
@@ -17,7 +23,9 @@ const SubMenuItemPage = ({ item }: { item: SubItem }) => {
 
   return (
     <div
-      className='text-sm cursor-pointer hover:text-cyan-500'
+      className={`text-sm cursor-pointer hover:text-cyan-500 ${
+        isActive ? "text-cyan-500" : ""
+      }`}
       onClick={handleNavLinkClick}
     >
       {name}
