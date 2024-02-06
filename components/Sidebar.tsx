@@ -9,6 +9,7 @@ import {
   Bell,
   HandCoins,
   HelpCircle,
+  LogOut
 } from "lucide-react";
 import SidebarSubItemPage from "./SidebarSubItem";
 
@@ -108,6 +109,12 @@ const Sidebar = () => {
             <SidebarSubItemPage key={item.path} item={item} />
           ))}
         </ul>
+      </div>
+      <div className="absolute bottom-0 left-0 ml-10 mb-10 w-full flex items-center space-x-2 cursor-pointer hover:text-cyan-500">
+      
+          <LogOut size={18} />
+          <span>Exit</span>
+      
       </div>
     </main>
   );
